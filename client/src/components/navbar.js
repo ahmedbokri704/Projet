@@ -120,12 +120,11 @@ function NAV(props) {
             <Card>
                 <Card.Body>
                     <div className="Text" style={{ display: "flex", justifyContent: "center" }}>
-                        <Link >
+                        
                             Recipes And Stories © 2020__
-     </Link>
-                        <Link to="/Rate">
-                            __Privacy Policy, Contact Us, Rate Us
-     </Link>
+                        
+                            __Privacy Policy,<Link to=""> Contact Us</Link>
+                            
                     </div>
                 </Card.Body>
             </Card>

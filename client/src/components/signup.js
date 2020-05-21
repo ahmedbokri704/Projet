@@ -14,7 +14,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 
 function Copyright() {
   return (
@@ -72,7 +75,29 @@ function SignUp(props) {
   };
 
   return (
-
+    <div>
+<div>
+        <AppBar position="static" >
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Recipes And Stories</Typography>
+              <Typography variant="h6" className={classes.title} style={{marginLeft:"250px"}}>
+              "People who like to eat ... are always the best."
+            </Typography>
+            <Link href="/">
+            <Button style={{marginLeft:"190px"}}
+                fullWidth
+                variant="contained"
+                color="primary">
+              Home_Page
+              </Button>
+            </Link>
+          </Toolbar>
+        </AppBar>
+      </div>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -168,7 +193,7 @@ function SignUp(props) {
         <Copyright />
       </Box>
     </Container>
-    
+    </div>
   );
 }
 export default withRouter(SignUp);

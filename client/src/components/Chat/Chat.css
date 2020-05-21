@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   background-color: #1A1A1D;
+  margin-top: -591px;
 }
 
 .container {

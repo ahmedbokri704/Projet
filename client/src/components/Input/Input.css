@@ -5,9 +5,10 @@
 
 .input {
   border: none;
-  border-radius: 0;
+  border-radius: 10;
   padding: 5%;
   width: 80%;
+  height: 50px;
   font-size: 1.2em;
 }
 
@@ -23,5 +24,7 @@ input:focus, textarea:focus, select:focus{
   padding: 20px;
   display: inline-block;
   border: none;
+  border-radius: 10px;
   width: 20%;
+  height: 100px;
 }

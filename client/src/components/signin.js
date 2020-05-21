@@ -75,7 +75,7 @@ function SignIn(props) {
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("token", response.data.token)
-          props.history.push("/card");
+          props.history.push("/profile");
         }
       })
       .catch((err) => {
@@ -93,10 +93,18 @@ function SignIn(props) {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Recipes And Stories__</Typography>
-            <Typography variant="h6" className={classes.title}>
-              __"People who like to eat ... are always the best."
+              Recipes And Stories</Typography>
+            <Typography variant="h6" className={classes.title} style={{marginLeft:"170px"}}>
+              "People who like to eat ... are always the best."
             </Typography>
+            <Link href="/">
+            <Button style={{marginLeft:"170px"}}
+                fullWidth
+                variant="contained"
+                color="primary">
+              Home_Page
+              </Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </div>

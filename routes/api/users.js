@@ -73,24 +73,39 @@ router.get(
     res.send(req.user);
   }
 );
-
-// add new task(post)
-router.put("/newtask/:id",(req,res)=>{
-  const _id = req.params.id
-  const {text} = req.body
-  User.findOneAndUpdate({_id},{
-    $push : {tasks : {index:Date.now(),text,isCompleted:false}}
-  }).then(user =>res.json(user)).catch((err)=> console.error(err))
+//display 
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  User.findOne({ _id: id })
+    .then((data) => res.json(data.tasks))
+    .catch((err) => res.send(err));
 });
 
+// Post a newtask
+router.put("/newtask/:id", (req, res) => {
+  const _id = req.params.id;
+  const { text } = req.body;
+  User.findOneAndUpdate(
+    { _id },
+    { $push: { tasks: { index: Date.now(), text, isCompleted: false } } }
+  )
+    .then((user) => res.send(user))
+    .catch((err) => console.error(err));
+});
 
-// delete task(post)
-router.put("/deletetask/:id/:index",(req,res)=>{
-  const _id=req.params.id;
-  const index= req.params.index;
-  User.findOneAndUpdate({_id},{
-    $pull : {tasks :{index: Number(index)}},
-  }).then(user =>res.json(user)).catch((err)=> console.error(err))
+// delete a task
+router.put("/deletetask/:id/:index", (req, res) => {
+  console.log("params:",req.query)
+  const _id = req.params.id;
+  const index = req.params.index;
+  console.log("id:", _id);
+  console.log("index:", index);
+  User.findOneAndUpdate(
+    { _id },
+    { $pull: { tasks:{index:Number(req.params.index)} } }
+  )
+    .then((user) => res.send(user))
+    .catch((err) => console.error(err));
 });
 
 module.exports = router;

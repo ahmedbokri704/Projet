@@ -25,9 +25,9 @@ const UserSchema = new Schema({
     default: Date.now(),
   },
   tasks:{
-    type: Array,
-    default: []
-  },
+    type:Array,
+    default:[]
+  }
 });
 
 module.exports = User = mongoose.model("user", UserSchema);

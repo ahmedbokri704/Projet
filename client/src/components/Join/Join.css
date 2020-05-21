@@ -17,9 +17,10 @@ html, body {
   justify-content: center;
   text-align: center;
   height: 100%;
-  width: 50%;
-  align-items: left;
+  width: 100%;
+  align-items: center;
   background-color: #1A1A1D;
+  margin-top: -591px;
 }
 
 .joinInnerContainer {
